@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+
 
 
 
@@ -24,8 +24,8 @@ const hours= (x)=> Math.floor((x / (1000 * 60 * 60)) % 24)===0? "00":Math.floor(
       
       }
 
-      start(e){
-          e.preventDefault();
+      start=()=>{
+       
           if(this.state.timePause){
               
               this.setState({timePause:false,name:"btn-pause",description:"Pause"})
@@ -41,8 +41,8 @@ const hours= (x)=> Math.floor((x / (1000 * 60 * 60)) % 24)===0? "00":Math.floor(
             }
             
     }
-    reset(e){
-        e.preventDefault();
+    reset=()=>{
+       
         
         this.setState({timePause:true,name:"btn-start",description:"Start",clock:0})
         clearInterval(this.timer,1000)
@@ -61,8 +61,8 @@ const hours= (x)=> Math.floor((x / (1000 * 60 * 60)) % 24)===0? "00":Math.floor(
 
 </div>
 <div className="button-container">
-<button className={this.state.name} onClick={this.start.bind(this)}>{this.state.description}</button> 
-<button className="btn-reset" onClick={this.reset.bind(this)}>Reset</button>
+<button className={this.state.name} onClick={this.start}>{this.state.description}</button> 
+<button className="btn-reset" onClick={this.reset}>Reset</button>
 </div>
 
 </div>
@@ -71,5 +71,5 @@ const hours= (x)=> Math.floor((x / (1000 * 60 * 60)) % 24)===0? "00":Math.floor(
     }
 }
 
-ReactDOM.render(<Timer />, document.getElementById('root'));
+
 export default Timer

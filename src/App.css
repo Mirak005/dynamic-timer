@@ -15,7 +15,9 @@
   border-radius: 8px;
   width:130px;
 }
-.button-container button:focus {outline:0;}
+.button-container button:focus {
+  outline:0;
+}
 
 .btn-start{
   font-size: large;
